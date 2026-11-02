@@ -1,0 +1,13 @@
+{
+  "name": "@firstrow/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "FiRSTRow HTTP API.",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "@firstrow/shared": "workspace:*"
+  }
+}

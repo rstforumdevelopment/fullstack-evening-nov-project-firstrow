@@ -1,0 +1,4 @@
+# Every folder matched here becomes a "workspace package"
+packages:
+  - "apps/*"
+  - "packages/*"

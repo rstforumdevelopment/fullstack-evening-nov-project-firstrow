@@ -1,0 +1,14 @@
+{
+  "name": "firstrow",
+  "version": "0.0.0",
+  "private": true,
+  "description": "FiRSTRow - a live event ticketing platform.",
+  "author": "Rahul Sharma",
+  "packageManager": "pnpm@12.5.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev:api": "pnpm --filter @firstrow/api dev"
+  }
+}
