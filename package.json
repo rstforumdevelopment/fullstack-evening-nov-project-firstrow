@@ -9,6 +9,11 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev:api": "pnpm --filter @firstrow/api dev"
+    "dev:api": "pnpm --filter @firstrow/api dev",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "typescript": "6.0.3"
   }
 }

@@ -5,9 +5,13 @@
   "type": "module",
   "description": "FiRSTRow HTTP API.",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node src/index.js",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@firstrow/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6"
   }
 }

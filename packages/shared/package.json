@@ -6,5 +6,8 @@
   "description": "Code shared by the API and the web app.",
   "exports": {
     ".": "./src/index.js"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
   }
 }
