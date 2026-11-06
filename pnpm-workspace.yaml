@@ -1,6 +1,6 @@
 # Every folder matched here becomes a "workspace package"
 packages:
-  - "apps/*"
-  - "packages/*"
+  - 'apps/*'
+  - 'packages/*'
 allowBuilds:
   esbuild: false
