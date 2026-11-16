@@ -15,7 +15,13 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check",
+    "infra:up": "docker compose up -d",
+    "infra:down": "docker compose down",
+    "infra:reset": "docker compose down -v && docker compose up -d",
+    "infra:ps": "docker compose ps",
+    "infra:logs": "docker compose logs -f",
+    "ai:up": "docker compose --profile ai up -d"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
