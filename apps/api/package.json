@@ -5,13 +5,15 @@
   "type": "module",
   "description": "FiRSTRow HTTP API.",
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "tsx watch src/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@firstrow/shared": "workspace:*"
+    "@firstrow/shared": "workspace:*",
+    "express": "^5.3.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^26.6.6"
   }
 }

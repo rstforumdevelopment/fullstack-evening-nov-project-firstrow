@@ -1,8 +1,9 @@
-import { APP_NAME, APP_TAGLINE, SEAT_STATUS_LABELS } from '@firstrow/shared';
-import type { SeatStatus } from '@firstrow/shared';
+import { createApp } from './app.js';
 
-const status: SeatStatus = 'held';
+const port = Number(process.env.PORT ?? 3000);
 
-console.log(`${APP_NAME} - ${APP_TAGLINE}`);
-console.log(`A seat can be: ${Object.keys(SEAT_STATUS_LABELS).join(', ')}`);
-console.log(`This one is: ${SEAT_STATUS_LABELS[status]}`);
+const app = createApp();
+
+app.listen(port, () => {
+  console.log(`API listening on http://localhost:${port}`);
+});
