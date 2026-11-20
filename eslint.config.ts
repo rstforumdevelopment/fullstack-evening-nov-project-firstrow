@@ -56,6 +56,15 @@ export default defineConfig([
     },
   },
 
-  // 6. Switch off every rule that would argue with Prettier
+  // 6. Use logger and not console.log
+  {
+    files: ['apps/**/*.ts', 'packages/**/*.ts'],
+    ignores: ['apps/*/src/config/env.ts', 'apps/*/src/lib/logger.ts'],
+    rules: {
+      'no-console': 'error',
+    },
+  },
+
+  // 7. Switch off every rule that would argue with Prettier
   prettier,
 ]);

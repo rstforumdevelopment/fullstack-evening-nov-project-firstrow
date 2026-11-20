@@ -3,10 +3,16 @@ import { z } from 'zod';
 /**
  * The single description of every environment variable this service needs.
  */
-const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
-  PORT: z.coerce.number().int().min(1).max(65535).default(3000),
-});
+const envSchema = z
+  .object({
+    NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+    PORT: z.coerce.number().int().min(1).max(65535).default(3000),
+    LOG_LEVEL: z
+      .enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'])
+      .default('info'),
+    LOG_PRETTY: z.stringbool().optional(),
+  })
+  .transform((raw) => ({ ...raw, LOG_PRETTY: raw.LOG_PRETTY ?? raw.NODE_ENV !== 'production' }));
 
 export type Env = z.infer<typeof envSchema>;
 
