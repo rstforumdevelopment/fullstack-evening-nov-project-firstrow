@@ -38,6 +38,24 @@ export default defineConfig([
     },
   },
 
-  // 5. Switch off every rule that would argue with Prettier
+  // 5. `process.env` is readable exactly once, in the config module
+  // that validates it. Everywhere else, import `env` instead - that way
+  // the schema is the only description of what this service needs to run.
+  {
+    files: ['apps/**/*.ts', 'packages/**/*.ts'],
+    ignores: ['apps/*/src/config/env.ts'],
+    rules: {
+      'no-restricted-properties': [
+        'error',
+        {
+          object: 'process',
+          property: 'env',
+          message: 'Read configuration from `env` in src/config/env.ts, not from process.env.',
+        },
+      ],
+    },
+  },
+
+  // 6. Switch off every rule that would argue with Prettier
   prettier,
 ]);
