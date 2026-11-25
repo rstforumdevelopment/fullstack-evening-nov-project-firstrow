@@ -11,6 +11,10 @@ const envSchema = z
       .enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'])
       .default('info'),
     LOG_PRETTY: z.stringbool().optional(),
+    DATABASE_URL: z.url({ protocol: /^postgres(ql)?$/ }),
+    DATABASE_POOL_MAX: z.coerce.number().int().min(1).max(100).default(10),
+    MONGO_URL: z.url({ protocol: /^mongodb(\+srv)?$/ }),
+    MONGO_DB: z.string().min(1),
   })
   .transform((raw) => ({ ...raw, LOG_PRETTY: raw.LOG_PRETTY ?? raw.NODE_ENV !== 'production' }));
 
